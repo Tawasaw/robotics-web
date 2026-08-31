@@ -15,7 +15,7 @@ export const programs: Program[] = [
     key: "fll",
     shortName: "FLL",
     name: "FIRST LEGO League",
-    ages: "Ages 8–12",
+    ages: "Ages 9–16 (Grades 4–8)",
     description:
       "Hands-on robotics grounded in teamwork, Tarbiyah, and meaningful competition.",
     icon: "blocks",
@@ -30,7 +30,7 @@ export const programs: Program[] = [
     key: "ftc",
     shortName: "FTC",
     name: "FIRST Tech Challenge",
-    ages: "Ages 12–16",
+    ages: "Ages 12–18 (Grades 7–12)",
     description:
       "Hands-on robotics grounded in teamwork, Tarbiyah, and meaningful competition.",
     icon: "bot",
