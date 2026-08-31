@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+
+// Standalone site for FTC team #30619. Kept as a redirect so the old
+// /ftc30619 link from the previous site keeps working.
+const target = "https://ftc30619.lovable.app";
+---
+
+<Base title="Redirecting… | Tawasaw Robotics" description="Redirecting to the FTC #30619 team site.">
+  <meta slot="head" http-equiv="refresh" content={`0; url=${target}`} />
+  <main class="notfound">
+    <div>
+      <h1 class="notfound__small">Redirecting…</h1>
+      <p>
+        If you are not redirected, <a href={target}>open the FTC #30619 site</a>.
+      </p>
+    </div>
+  </main>
+  <script is:inline define:vars={{ target }}>
+    window.location.replace(target);
+  </script>
+</Base>

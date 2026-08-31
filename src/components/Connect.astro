@@ -1,0 +1,48 @@
+---
+import Icon from "./Icon.astro";
+
+const links = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/tawasaw.robotics.sv/",
+    icon: "instagram" as const
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@TawasawRoboticsSV",
+    icon: "youtube" as const
+  },
+  {
+    label: "Email",
+    href: "mailto:robotics-outreach@tawasaw.org",
+    icon: "mail" as const
+  }
+];
+---
+
+<section class="connect" aria-labelledby="connect-heading">
+  <div class="shell section__inner">
+    <h2 id="connect-heading">Connect With Us</h2>
+    <p class="lede">
+      Follow our journey as we continue to learn, build, and compete in FTC robotics.
+    </p>
+    <div class="connect__links">
+      {
+        links.map(({ label, href, icon }) => {
+          const external = !href.startsWith("mailto:");
+          return (
+            <a
+              href={href}
+              aria-label={label}
+              title={label}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
+            >
+              <Icon name={icon} size={20} />
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

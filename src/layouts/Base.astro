@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Tawasaw Silicon Valley robotics programs for ages 6–16, combining FLL and FTC competition with Tarbiyah-based leadership."
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href={canonical} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Tawasaw" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL("/islamic-robot.png", Astro.site)} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@400;500;600;700&display=swap"
+    />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="shell masthead__inner">
+        <a href="/" class="masthead__logo" aria-label="Tawasaw Robotics home">
+          <img src="/tawasaw-institute-white.png" alt="Tawasaw Institute" />
+        </a>
+        <a href="https://www.tawasaw.org" class="masthead__link">Tawasaw Website</a>
+      </div>
+    </header>
+    <slot />
+  </body>
+</html>

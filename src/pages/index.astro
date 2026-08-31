@@ -1,0 +1,156 @@
+---
+import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
+import Connect from "../components/Connect.astro";
+import { programs } from "../data/programs";
+
+const values = [
+  { icon: "users" as const, title: "Teamwork", copy: "Build lasting friendships" },
+  {
+    icon: "wrench" as const,
+    title: "Skills",
+    copy: "Engineering, coding, critical thinking"
+  },
+  {
+    icon: "trophy" as const,
+    title: "Competition",
+    copy: "Compete at local, state, national & international tournaments"
+  },
+  {
+    icon: "heart" as const,
+    title: "Character",
+    copy: "Leadership, confidence, service"
+  },
+  {
+    icon: "sparkles" as const,
+    title: "Tarbiyah",
+    copy: "Strengthen faith. Make an impact."
+  }
+];
+---
+
+<Base title="Tawasaw Silicon Valley">
+  <main id="top">
+    <section class="section">
+      <div class="hero">
+        <div class="hero__copy">
+          <h1 class="hero__title">Tawasaw Robotics Programs</h1>
+          <p class="hero__tagline">
+            Building robots.<br /><span>Building futures.</span>
+          </p>
+          <p class="hero__deck">
+            Excel in Deen through Tarbiyah.<br />
+            Excel in Dunyah through Robotics.
+          </p>
+          <p class="hero__season">2026–2027 Season</p>
+        </div>
+        <div class="hero__art">
+          <img
+            src="/islamic-robot.png"
+            alt="Islamic-crafted wooden robot — uniting faith and science"
+            width="1446"
+            height="1087"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="section section--muted">
+      <div class="shell section__inner">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Choose a program</p>
+            <h2>Two programs. One mission.</h2>
+          </div>
+          <p class="lede">
+            Hands-on robotics grounded in teamwork, Tarbiyah, and meaningful
+            competition.
+          </p>
+        </div>
+
+        <div class="programs">
+          {
+            programs.map((program, index) => (
+              <article class:list={["program", index > 0 && "program--accent"]}>
+                <div class="program__top">
+                  <span class="pill">{program.ages}</span>
+                  <span class="program__glyph">
+                    <Icon name={program.icon} size={44} />
+                  </span>
+                </div>
+                <p class="program__short">{program.shortName}</p>
+                <h3 class="program__name">{program.name}</h3>
+                <ul class="checklist">
+                  {program.points.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+                <a
+                  class:list={["btn", "btn--block", index > 0 && "btn--invert"]}
+                  href={`/apply/${program.key}/`}
+                >
+                  Apply for {program.shortName}
+                  <Icon name="arrow-right" size={18} />
+                </a>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell section__inner">
+        <h2 class="section-title">More than robots</h2>
+        <div class="values">
+          {
+            values.map(({ icon, title, copy }) => (
+              <article class="value">
+                <Icon name={icon} size={40} />
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="section--primary">
+      <div class="schedule">
+        <div class="schedule__cell schedule__cell--icon">
+          <Icon name="clock" size={48} />
+          <div>
+            <p class="schedule__label">Saturdays</p>
+            <p class="schedule__value schedule__value--lg">3 PM</p>
+          </div>
+        </div>
+        <div class="schedule__cell">
+          <p class="schedule__label">Starting</p>
+          <p class="schedule__value">Sept. 2026</p>
+        </div>
+        <div class="schedule__cell">
+          <p class="schedule__label schedule__label--sm">Limited spots</p>
+          <p class="schedule__value">Enroll now</p>
+          <a class="schedule__link" href="https://robotics.tawasaw.org"
+            >robotics.tawasaw.org</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--top-rule">
+      <div class="shell callout">
+        <Icon name="award" size={40} />
+        <h2>2025–2026 Season Achievements</h2>
+        <a class="btn" href="/achievements/">
+          View season achievements
+          <Icon name="arrow-right" size={18} />
+        </a>
+      </div>
+    </section>
+
+    <Connect />
+  </main>
+</Base>

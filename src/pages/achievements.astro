@@ -1,0 +1,156 @@
+---
+import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
+import { teams } from "../data/achievements";
+---
+
+<Base
+  title="2025–2026 Season Achievements | Tawasaw Robotics"
+  description="Rookie-season results for Tawasaw Robotics: FTC teams Mars Rovers #30619 and Eclipse #30618, plus the FLL UNEARTHED season."
+>
+  <main>
+    <div class="subnav">
+      <div class="shell subnav__inner">
+        <a class="btn btn--quiet" href="/">
+          <Icon name="arrow-left" size={18} />
+          Return home
+        </a>
+        <p class="subnav__season">2025–2026 Season</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="shell section__inner page-head">
+        <h1>2025–2026 Season Achievements</h1>
+        <p class="lede">
+          Our rookie teams made their mark — strong records, multiple alliance
+          captainships, and awards for design, innovation, inspiration, and core
+          values.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--muted">
+      <div class="shell section__inner">
+        <p class="eyebrow">FTC Rookie Season</p>
+        <p class="lede lede--wide">
+          Our rookie FTC teams made their mark — two strong records, multiple
+          alliance captainships, and awards for design, innovation, and
+          inspiration.
+        </p>
+
+        <div class="stack">
+          {
+            teams.map((team) => (
+              <article class="team">
+                <div class="team__head">
+                  <div>
+                    <h2 class="team__name">
+                      <Icon name={team.icon} size={36} />
+                      {team.title}
+                    </h2>
+                    <p class="team__number">{team.number}</p>
+                  </div>
+                  <div class="team__record">
+                    <strong>{team.record}</strong>
+                    <span>{team.recordLabel}</span>
+                  </div>
+                </div>
+
+                <div class="team__body">
+                  <p class="team__summary">{team.summary}</p>
+
+                  <div class="comps">
+                    {team.competitions.map((comp) => (
+                      <section class="comp">
+                        <h3>{comp.name}</h3>
+                        <p class="comp__result">{comp.result}</p>
+                        <ul class="bullets">
+                          {comp.details.map((detail) => (
+                            <li>{detail}</li>
+                          ))}
+                        </ul>
+                      </section>
+                    ))}
+                  </div>
+
+                  <h3 class="eyebrow highlights-label">
+                    Season highlights
+                  </h3>
+                  <ul class="highlights highlights--tight">
+                    {team.highlights.map((highlight) => (
+                      <li>{highlight}</li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="fll">
+      <div class="shell section__inner">
+        <p class="eyebrow eyebrow--onDark">
+          FIRST LEGO League Challenge
+        </p>
+        <h2 class="fll__title">FLL UNEARTHED Season</h2>
+        <p class="fll__outro fll__intro">
+          Three teams represented our chapter at the NorCal Spring League, earning
+          the Core Values Award and delivering strong, competitive performances.
+        </p>
+
+        <div class="fll__grid">
+          <div class="fll__card">
+            <p class="fll__label">
+              <Icon name="award" size={20} />
+              Core Values Award Winners
+            </p>
+            <h3>A Standout Showing at the NorCal Spring League</h3>
+            <p>
+              Our boys' team earned the Core Values Award, a major judged honor
+              recognizing a team that exemplifies the very best of FIRST through
+              outstanding teamwork, inclusion, innovation, respect, and Gracious
+              Professionalism. Their achievement reflects not only strong
+              performance, but the character, collaboration, and leadership at the
+              heart of FIRST LEGO League.
+            </p>
+          </div>
+
+          <div class="fll__card">
+            <p class="fll__label">
+              <Icon name="users" size={20} />
+              Strong Girls' Team Performance
+            </p>
+            <h3>Three Teams Representing Our Chapter</h3>
+            <p>
+              Both of our all-girls teams delivered strong, competitive performances
+              throughout the tournament, demonstrating confidence, technical ability,
+              teamwork, persistence, and an impressive command of the FLL Challenge
+              experience.
+            </p>
+          </div>
+        </div>
+
+        <p class="fll__outro">
+          Our FLL Challenge students made a powerful showing at the NorCal Spring
+          League, with three teams — two all-girls teams and one boys' team —
+          proudly representing our chapter. With three teams competing and an
+          award-winning performance, our students demonstrated the growing strength
+          and depth of our FLL program. From engineering and programming to
+          problem-solving, presentation, and teamwork, they represented our chapter
+          with excellence and showed that our next generation of robotics leaders is
+          already making its mark.
+        </p>
+
+        <div class="center-action">
+          <a class="btn btn--invert" href="/">
+            <Icon name="arrow-left" size={18} />
+            Return home
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
