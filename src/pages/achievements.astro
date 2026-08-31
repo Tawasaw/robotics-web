@@ -60,6 +60,15 @@ import { teams } from "../data/achievements";
 
                 <div class="team__body">
                   <p class="team__summary">{team.summary}</p>
+                  <a
+                    class="btn team__website"
+                    href={team.website}
+                    target={team.website.startsWith("http") ? "_blank" : undefined}
+                    rel={team.website.startsWith("http") ? "noopener noreferrer" : undefined}
+                  >
+                    Visit {team.title} website
+                    <Icon name="arrow-right" size={18} />
+                  </a>
 
                   <div class="comps">
                     {team.competitions.map((comp) => (

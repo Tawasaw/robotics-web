@@ -594,6 +594,19 @@ svg {
   font-size: 3rem;
 }
 
+.schedule__times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-transform: uppercase;
+}
+
+.schedule__times span {
+  color: hsl(var(--primary-foreground) / 0.75);
+}
+
 .schedule__link {
   display: inline-block;
   margin-top: 1rem;
@@ -738,6 +751,10 @@ svg {
 
 .team__body {
   padding: 1.75rem;
+}
+
+.team__website {
+  margin-top: 1.5rem;
 }
 
 @media (min-width: 640px) {
@@ -959,6 +976,7 @@ svg {
 @media (min-width: 640px) {
   .apply__actions {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 

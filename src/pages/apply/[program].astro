@@ -16,7 +16,7 @@ const accent = program.key === "ftc";
 
 <Base
   title={`Apply for ${program.shortName} | Tawasaw Robotics`}
-  description={`${program.name} (${program.ages}) at Tawasaw Silicon Valley. ${program.description}`}
+  description={`${program.name} — ${program.ages} at Tawasaw Silicon Valley. ${program.description}`}
 >
   <main>
     <div class="subnav">
@@ -59,7 +59,7 @@ const accent = program.key === "ftc";
           <div class="apply__when">
             <Icon name="clock" size={32} />
             <div>
-              <h3>Saturdays at 3 PM</h3>
+              <h3>Saturdays at {program.meetingTime}</h3>
               <p>Sessions begin September 2026.</p>
             </div>
           </div>
@@ -69,7 +69,25 @@ const accent = program.key === "ftc";
               Contact us
               <Icon name="mail" size={18} />
             </a>
-            <a class="btn btn--invert" href="/">View both programs</a>
+            {
+              program.key === "ftc" && (
+                <>
+                  <a class="btn btn--invert" href="/ftc30619/">
+                    Mars Rovers website
+                    <Icon name="arrow-right" size={18} />
+                  </a>
+                  <a
+                    class="btn btn--invert"
+                    href="https://eclipse30618.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Eclipse website
+                    <Icon name="arrow-right" size={18} />
+                  </a>
+                </>
+              )
+            }
           </div>
         </div>
       </div>

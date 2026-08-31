@@ -9,6 +9,7 @@ export interface Team {
   icon: "rocket" | "moon";
   title: string;
   number: string;
+  website: string;
   record: string;
   recordLabel: string;
   summary: string;
@@ -22,6 +23,7 @@ export const teams: Team[] = [
     icon: "rocket",
     title: "Mars Rovers",
     number: "FTC #30619",
+    website: "/ftc30619/",
     record: "17–5",
     recordLabel: "overall record across three official competitions",
     summary:
@@ -72,6 +74,7 @@ export const teams: Team[] = [
     icon: "moon",
     title: "Eclipse",
     number: "FTC #30618",
+    website: "https://eclipse30618.com",
     record: "11–7",
     recordLabel: "rookie-season record across two official tournaments",
     summary:

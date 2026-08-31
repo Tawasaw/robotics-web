@@ -126,7 +126,15 @@ const values = [
           <Icon name="clock" size={48} />
           <div>
             <p class="schedule__label">Saturdays</p>
-            <p class="schedule__value schedule__value--lg">3 PM</p>
+            <div class="schedule__times">
+              {
+                programs.map((program) => (
+                  <p>
+                    <span>{program.shortName}</span> {program.meetingTime}
+                  </p>
+                ))
+              }
+            </div>
           </div>
         </div>
         <div class="schedule__cell">

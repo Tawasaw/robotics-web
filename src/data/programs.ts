@@ -5,6 +5,7 @@ export interface Program {
   shortName: string;
   name: string;
   ages: string;
+  meetingTime: string;
   description: string;
   icon: "blocks" | "bot";
   points: string[];
@@ -16,6 +17,7 @@ export const programs: Program[] = [
     shortName: "FLL",
     name: "FIRST LEGO League",
     ages: "Ages 9–16 (Grades 4–8)",
+    meetingTime: "3 PM",
     description:
       "Hands-on robotics grounded in teamwork, Tarbiyah, and meaningful competition.",
     icon: "blocks",
@@ -31,6 +33,7 @@ export const programs: Program[] = [
     shortName: "FTC",
     name: "FIRST Tech Challenge",
     ages: "Ages 12–18 (Grades 7–12)",
+    meetingTime: "4 PM",
     description:
       "Hands-on robotics grounded in teamwork, Tarbiyah, and meaningful competition.",
     icon: "bot",
