@@ -205,22 +205,32 @@ svg {
 }
 
 .masthead__logo img {
-  height: 2.75rem;
+  height: 3rem;
   width: auto;
 }
 
 @media (min-width: 640px) {
   .masthead__logo img {
-    height: 3rem;
+    height: 3.25rem;
   }
 }
 
 .masthead__link {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   transition: opacity 0.15s ease;
+}
+
+.masthead__link img {
+  height: 2.25rem;
+  width: auto;
+}
+
+@media (min-width: 640px) {
+  .masthead__link img {
+    height: 3rem;
+  }
 }
 
 .masthead__link:hover {

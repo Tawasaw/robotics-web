@@ -61,13 +61,24 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <div class="shell masthead__inner">
         <a href="/" class="masthead__logo" aria-label="Tawasaw Robotics home">
           <img
+            src="/tawasaw-robotics-white.png"
+            alt="Tawasaw Robotics — Silicon Valley"
+            width="614"
+            height="332"
+          />
+        </a>
+        <a
+          href="https://www.tawasaw.org/"
+          class="masthead__link"
+          aria-label="Tawasaw Institute website"
+        >
+          <img
             src="/tawasaw-institute-white.png"
             alt="Tawasaw Institute"
             width="1500"
             height="523"
           />
         </a>
-        <a href="https://www.tawasaw.org" class="masthead__link">Tawasaw Website</a>
       </div>
     </header>
     <slot />
