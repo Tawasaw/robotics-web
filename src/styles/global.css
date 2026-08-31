@@ -560,7 +560,7 @@ svg {
 
 @media (min-width: 1024px) {
   .schedule {
-    grid-template-columns: 1fr 1fr 1.35fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -587,10 +587,6 @@ svg {
   color: hsl(var(--primary-foreground) / 0.8);
 }
 
-.schedule__label--sm {
-  font-size: 0.875rem;
-}
-
 .schedule__value {
   font-family: var(--font-heading);
   font-size: clamp(2.25rem, 5vw, 3rem);
@@ -612,17 +608,6 @@ svg {
 
 .schedule__times span {
   color: hsl(var(--primary-foreground) / 0.75);
-}
-
-.schedule__link {
-  display: inline-block;
-  margin-top: 1rem;
-  font-size: 1.125rem;
-  font-weight: 700;
-}
-
-.schedule__link:hover {
-  color: hsl(var(--primary-foreground) / 0.8);
 }
 
 /* ---------- callout + connect ---------- */
