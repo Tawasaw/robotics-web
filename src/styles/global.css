@@ -163,6 +163,13 @@ svg {
   background: hsl(var(--muted));
 }
 
+.btn--disabled,
+.btn--disabled:hover {
+  background: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  cursor: not-allowed;
+}
+
 .btn--block {
   width: 100%;
 }
