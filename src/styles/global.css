@@ -1073,3 +1073,18 @@ svg {
 .notfound h1.notfound__small {
   font-size: 2rem;
 }
+
+.form-embed {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-embed iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 640 / 1699;
+  border: none;
+}
