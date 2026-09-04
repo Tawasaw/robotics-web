@@ -1,0 +1,116 @@
+---
+import Base from "../../layouts/Base.astro";
+import Icon from "../../components/Icon.astro";
+import { programs } from "../../data/programs";
+
+const program = programs.find((p) => p.key === "ftc")!;
+
+const logoSrc = "/first-biobuzz-lockup.png";
+const logoAlt = "FIRST Tech Challenge BIOBUZZ, presented by RTX";
+
+const formUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfGos2hzkaS2XMeZD6FaR_HJ8MTvrT4rRbiZ0k4wZOOnGdBUg/viewform?embedded=true";
+const formHeight = 1200;
+const deadline = "September 10, 2026";
+---
+
+<Base
+  title={`Apply for ${program.shortName} | Tawasaw Robotics`}
+  description={`${program.name} — ${program.ages} at Tawasaw Silicon Valley. ${program.description}`}
+>
+  <main>
+    <div class="subnav">
+      <div class="shell subnav__inner">
+        <a class="btn btn--quiet" href="/">
+          <Icon name="arrow-left" size={18} />
+          View both programs
+        </a>
+        <p class="subnav__season">2026–2027 Season</p>
+      </div>
+    </div>
+
+    <section class="section section--muted">
+      <div class="apply">
+        <div class="apply__side apply__side--accent">
+          <div class="program__top">
+            <span class="pill">{program.ages}</span>
+            <span class="program__glyph">
+              <Icon name={program.icon} size={44} />
+            </span>
+          </div>
+          <p class="program__short">{program.shortName}</p>
+          <h1 class="program__name">
+            <img
+              class="program__logo"
+              src={logoSrc}
+              alt={logoAlt}
+              width="900"
+              height="639"
+            />
+          </h1>
+          <p class="apply__desc">
+            {program.description}
+          </p>
+          <ul class="checklist">
+            {program.points.map((point) => <li>{point}</li>)}
+          </ul>
+        </div>
+
+        <div class="apply__form">
+          <p class="eyebrow">Registration</p>
+          <h2>Apply for {program.shortName}</h2>
+          <p class="apply__deadline">
+            <Icon name="clock" size={18} />
+            <span>
+              Applications close <strong>{deadline}</strong>.
+            </span>
+          </p>
+          <div class="form-embed" style={`--form-height: ${formHeight};`}>
+            <iframe
+              src={formUrl}
+              title={`${program.shortName} application form`}
+              width="640"
+              height={formHeight}
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+            >
+              Loading…
+            </iframe>
+          </div>
+
+          <div class="apply__when">
+            <Icon name="clock" size={32} />
+            <div>
+              <h3>Saturdays at {program.meetingTime}</h3>
+              <p>Sessions begin September 2026.</p>
+            </div>
+          </div>
+
+          <div class="apply__actions">
+            <a class="btn" href="mailto:robotics-outreach@tawasaw.org">
+              Contact us
+              <Icon name="mail" size={18} />
+            </a>
+            <a class="btn btn--invert" href="/ftc30619/">
+              Mars Rovers website
+              <Icon name="arrow-right" size={18} />
+            </a>
+            <a
+              class="btn btn--invert"
+              href="https://eclipse30618.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Eclipse website
+              <Icon name="arrow-right" size={18} />
+            </a>
+            <span class="btn btn--invert btn--disabled" aria-disabled="true">
+              Supernova website — coming soon
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

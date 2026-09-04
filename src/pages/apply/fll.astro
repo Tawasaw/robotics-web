@@ -3,15 +3,12 @@ import Base from "../../layouts/Base.astro";
 import Icon from "../../components/Icon.astro";
 import { programs } from "../../data/programs";
 
-export function getStaticPaths() {
-  return programs.map((program) => ({
-    params: { program: program.key },
-    props: { program }
-  }));
-}
+const program = programs.find((p) => p.key === "fll")!;
 
-const { program } = Astro.props;
-const accent = program.key === "ftc";
+const formUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLScJ_fIuKFXq_tfzv68LYRezorLQnG2ZRBV2Cvq1oe4GkkFicg/viewform?embedded=true";
+const formHeight = 1699;
+const deadline = "September 6, 2026";
 ---
 
 <Base
@@ -31,7 +28,7 @@ const accent = program.key === "ftc";
 
     <section class="section section--muted">
       <div class="apply">
-        <div class:list={["apply__side", accent && "apply__side--accent"]}>
+        <div class="apply__side">
           <div class="program__top">
             <span class="pill">{program.ages}</span>
             <span class="program__glyph">
@@ -51,27 +48,25 @@ const accent = program.key === "ftc";
         <div class="apply__form">
           <p class="eyebrow">Registration</p>
           <h2>Apply for {program.shortName}</h2>
-          {
-            program.key === "fll" ? (
-              <div class="form-embed">
-                <iframe
-                  src="https://docs.google.com/forms/d/e/1FAIpQLScJ_fIuKFXq_tfzv68LYRezorLQnG2ZRBV2Cvq1oe4GkkFicg/viewform?embedded=true"
-                  width="640"
-                  height="1699"
-                  frameborder="0"
-                  marginheight="0"
-                  marginwidth="0"
-                >
-                  Loading…
-                </iframe>
-              </div>
-            ) : (
-              <p class="apply__note">
-                The registration form for this program will be added here. Please
-                check back soon or contact us for enrollment questions.
-              </p>
-            )
-          }
+          <p class="apply__deadline">
+            <Icon name="clock" size={18} />
+            <span>
+              Applications close <strong>{deadline}</strong>.
+            </span>
+          </p>
+          <div class="form-embed" style={`--form-height: ${formHeight};`}>
+            <iframe
+              src={formUrl}
+              title={`${program.shortName} application form`}
+              width="640"
+              height={formHeight}
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+            >
+              Loading…
+            </iframe>
+          </div>
 
           <div class="apply__when">
             <Icon name="clock" size={32} />
@@ -86,28 +81,6 @@ const accent = program.key === "ftc";
               Contact us
               <Icon name="mail" size={18} />
             </a>
-            {
-              program.key === "ftc" && (
-                <>
-                  <a class="btn btn--invert" href="/ftc30619/">
-                    Mars Rovers website
-                    <Icon name="arrow-right" size={18} />
-                  </a>
-                  <a
-                    class="btn btn--invert"
-                    href="https://eclipse30618.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Eclipse website
-                    <Icon name="arrow-right" size={18} />
-                  </a>
-                  <span class="btn btn--invert btn--disabled" aria-disabled="true">
-                    Supernova website — coming soon
-                  </span>
-                </>
-              )
-            }
           </div>
         </div>
       </div>
