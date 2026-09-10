@@ -12,6 +12,7 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -82,5 +83,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       </div>
     </header>
     <slot />
+    <footer class="sitefoot">
+      <div class="shell sitefoot__inner">
+        <p>&copy; {year} Tawasaw Robotics &mdash; Silicon Valley</p>
+        <nav class="sitefoot__links" aria-label="Footer">
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="mailto:robotics-outreach@tawasaw.org">Contact</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

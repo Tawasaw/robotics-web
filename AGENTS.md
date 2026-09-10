@@ -57,12 +57,16 @@ Always run `npm run build` before committing website changes.
 - `src/pages/ftc30619.astro`
   Redirect to the standalone FTC #30619 site. Kept so old links keep working.
 
+- `src/pages/privacy.astro`
+  Privacy policy. Linked from the site footer on every page. Update the
+  `updated` constant at the top whenever the policy text changes.
+
 - `src/pages/404.astro`
   Not-found page. GitHub Pages serves this automatically.
 
 - `src/layouts/Base.astro`
-  HTML shell, metadata, fonts, and the blue masthead. Has a named `head` slot
-  for per-page tags.
+  HTML shell, metadata, fonts, the blue masthead, and the site footer (which
+  carries the privacy policy link). Has a named `head` slot for per-page tags.
 
 - `src/components/Icon.astro`
   Inline SVG icon set with lucide-compatible geometry. Add new icons to the
@@ -96,6 +100,7 @@ Always run `npm run build` before committing website changes.
 | `/` | `src/pages/index.astro` |
 | `/achievements/` | `src/pages/achievements.astro` |
 | `/apply/fll/`, `/apply/ftc/` | `src/pages/apply/[program].astro` |
+| `/privacy/` | `src/pages/privacy.astro` |
 | `/ftc30619/` | `src/pages/ftc30619.astro` (redirect) |
 | 404 | `src/pages/404.astro` |
 
