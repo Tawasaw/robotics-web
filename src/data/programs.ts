@@ -39,7 +39,6 @@ export const programs: Program[] = [
     icon: "bot",
     points: [
       "Design, build, and code a competition robot as a team",
-      "Pray Jama’a at the Masjid with your friends and families",
       "Excel at outreach, marketing, fundraising, and team building",
       "Compete at events — on the playing field and for awards",
       "Get mentorship from top talent in engineering and industry",
