@@ -61,12 +61,16 @@ Always run `npm run build` before committing website changes.
   Privacy policy. Linked from the site footer on every page. Update the
   `updated` constant at the top whenever the policy text changes.
 
+- `src/pages/terms.astro`
+  Terms of service. Linked from the site footer on every page. Update the
+  `updated` constant at the top whenever the terms change.
+
 - `src/pages/404.astro`
   Not-found page. GitHub Pages serves this automatically.
 
 - `src/layouts/Base.astro`
   HTML shell, metadata, fonts, the blue masthead, and the site footer (which
-  carries the privacy policy link). Has a named `head` slot for per-page tags.
+  carries the privacy and terms links). Has a named `head` slot for per-page tags.
 
 - `src/components/Icon.astro`
   Inline SVG icon set with lucide-compatible geometry. Add new icons to the
@@ -101,6 +105,7 @@ Always run `npm run build` before committing website changes.
 | `/achievements/` | `src/pages/achievements.astro` |
 | `/apply/fll/`, `/apply/ftc/` | `src/pages/apply/[program].astro` |
 | `/privacy/` | `src/pages/privacy.astro` |
+| `/terms/` | `src/pages/terms.astro` |
 | `/ftc30619/` | `src/pages/ftc30619.astro` (redirect) |
 | 404 | `src/pages/404.astro` |
 
