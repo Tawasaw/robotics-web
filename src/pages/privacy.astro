@@ -56,6 +56,11 @@ const contactEmail = "robotics-outreach@tawasaw.org";
               guardian, and a parent or guardian can ask us to delete them at
               any time.
             </li>
+            <li>
+              Enrolled families and coaches also use a separate sign-in-only
+              portal, which does keep accounts and records. It is described in
+              its own section below.
+            </li>
           </ul>
 
           <h2>Who we are</h2>
@@ -63,10 +68,17 @@ const contactEmail = "robotics-outreach@tawasaw.org";
             This site is operated by Tawasaw Robotics.
           </p>
           <p>
-            This policy covers <strong>robotics.tawasaw.org</strong> and the
-            program applications linked from it. It does not cover other
-            Tawasaw Institute websites, or the third-party sites and services
-            described below, each of which has its own privacy policy.
+            This policy covers two things: this public website,
+            <strong>robotics.tawasaw.org</strong>, together with the program
+            applications linked from it; and the program portal at
+            <strong>robotics.tawasaw.com</strong>, which enrolled families and
+            coaches sign in to. They are separate systems and they handle
+            information differently, so each is described separately below.
+          </p>
+          <p>
+            It does not cover other Tawasaw Institute websites, or the
+            third-party sites and services described below, each of which has
+            its own privacy policy.
           </p>
 
           <h2>Information we collect</h2>
@@ -86,9 +98,14 @@ const contactEmail = "robotics-outreach@tawasaw.org";
 
           <h3>Information collected automatically</h3>
           <p>
-            This is a static website with no accounts, no logins, and no
-            database of visitors. We do not set cookies, and we do not use
-            Google Analytics or any other analytics or advertising service.
+            <strong>This public website</strong> is static. It has no accounts,
+            no logins, and no database of visitors. We do not set cookies here,
+            and we do not use Google Analytics or any other analytics or
+            advertising service.
+          </p>
+          <p>
+            The portal at robotics.tawasaw.com is different — it has accounts
+            and it does keep records. See <a href="#portal">The program portal</a>.
           </p>
           <p>
             Two services do see technical information simply because the site
@@ -107,6 +124,123 @@ const contactEmail = "robotics-outreach@tawasaw.org";
               information as part of that request.
             </li>
           </ul>
+
+          <h2 id="portal">The program portal</h2>
+          <p>
+            Once a student has a place on a team, we run the season through our
+            own application at <strong>robotics.tawasaw.com</strong>. Unlike this
+            public website, it has accounts and it keeps records.
+          </p>
+
+          <h3>Who has an account</h3>
+          <p>
+            Only people we have already added: enrolled students, their parents
+            and guardians, and the coaches, mentors and administrators who run
+            the program. <strong>There is no public sign-up.</strong> If someone
+            we have not added tries to sign in, the portal turns them away
+            rather than creating an account. This is a program for children, and
+            an open sign-up would put strangers inside the family roster.
+          </p>
+
+          <h3>How signing in works</h3>
+          <p>
+            There are no passwords, so there is no password for us to store or
+            for anyone to steal. You sign in one of two ways:
+          </p>
+          <ul class="bullets">
+            <li>
+              <strong>With Google.</strong> We ask Google only for your name,
+              email address, and profile picture. We cannot read or send your
+              mail, and we cannot see your contacts, calendar, files, or
+              anything else in your Google account. Google confirms you control
+              the address; we never see your Google password.
+            </li>
+            <li>
+              <strong>With a one-time link</strong> emailed to the address we
+              already hold for you. The link expires after five minutes, is
+              stored only as a cryptographic hash, and works once.
+            </li>
+          </ul>
+          <p>
+            Signing in sets a session cookie so you stay signed in for up to
+            thirty days. It exists only to keep you signed in — it does not
+            track you, and there are no advertising or analytics cookies
+            anywhere in the portal.
+          </p>
+
+          <h3>What the portal stores</h3>
+          <ul class="bullets">
+            <li>
+              <strong>People and households</strong> — name, email address,
+              phone number, and which family a person belongs to.
+            </li>
+            <li>
+              <strong>Team membership</strong> — which team someone is on, in
+              what role, and when they joined or left.
+            </li>
+            <li>
+              <strong>Applications</strong> — a student's application for a
+              season and the decision on it, including any note an administrator
+              recorded.
+            </li>
+            <li>
+              <strong>Signed agreements</strong> — which agreement a guardian
+              signed, for which student, and when.
+            </li>
+            <li>
+              <strong>Attendance</strong> — arrival and departure times at team
+              meetings, and whether an absence was excused.
+            </li>
+            <li>
+              <strong>An audit log</strong> — a record of administrative
+              actions, so a change to a child's record can always be traced to
+              the adult who made it.
+            </li>
+          </ul>
+          <p>
+            We do not currently use camera check-in, so no QR badge is issued
+            and no photograph is taken at check-in.
+          </p>
+
+          <h3>Where it runs</h3>
+          <ul class="bullets">
+            <li>
+              <strong>Cloudflare</strong> hosts the portal and stores its
+              database. Cloudflare processes this information on our behalf.
+            </li>
+            <li>
+              <strong>Resend</strong> delivers the portal's email — sign-in
+              links and notices about an application.
+            </li>
+            <li>
+              <strong>Zeffy</strong> is the platform donations are made through.
+              The portal mirrors what Zeffy reports about a donation so we can
+              keep our own books. It no longer links a donation to a person or a
+              household record, and our program charges no registration fee.
+            </li>
+          </ul>
+
+          <h3>Deleting a portal record</h3>
+          <p>
+            A parent or guardian can ask us to erase their family's records,
+            either by email or from within the portal, and an administrator
+            reviews the request.
+          </p>
+          <p>
+            Completing an erasure removes contact details, the sign-in account
+            and any pending sign-in link, badge tokens, the original imported
+            spreadsheet row, and the free-text reason on any excused absence.
+          </p>
+          <p>
+            Some things are kept, and we would rather say so plainly than imply
+            otherwise. A signed agreement, an attendance record, a donation
+            record and the audit log remain, because a minor's signed agreement
+            may need to outlive their reaching adulthood, and donation records
+            are kept for seven years for accounting. A person's name is kept so
+            those remaining records stay attributable. The record is archived
+            rather than deleted outright, and it is closed to everyone,
+            including the guardian who could previously see it.
+          </p>
 
           <h2>How we use information</h2>
           <ul class="bullets">
@@ -131,6 +265,23 @@ const contactEmail = "robotics-outreach@tawasaw.org";
               <strong>Google Workspace</strong> — Google Forms collects
               applications, and the responses are stored in our Google account
               along with our program email.
+            </li>
+            <li>
+              <strong>Google Sign-In</strong> — one of the two ways to sign in
+              to the portal. We receive only your name, email address, and
+              profile picture.
+            </li>
+            <li>
+              <strong>Cloudflare</strong> — hosting and the database behind the
+              program portal.
+            </li>
+            <li>
+              <strong>Resend</strong> — delivers the portal's sign-in links and
+              notices.
+            </li>
+            <li>
+              <strong>Zeffy</strong> — the donation platform, and the source of
+              what the portal shows about a donation.
             </li>
             <li>
               <strong>GitHub Pages</strong> — website hosting.
@@ -212,6 +363,14 @@ const contactEmail = "robotics-outreach@tawasaw.org";
             up again. Email correspondence is kept in our program mailbox. You
             can ask us to delete a record sooner.
           </p>
+          <p>
+            Portal records follow the same principle, with two exceptions we
+            keep deliberately: a signed agreement, because a minor's consent may
+            need to outlive their reaching adulthood, and a donation record,
+            kept seven years for accounting. What an erasure removes and what it
+            keeps is set out under
+            <a href="#portal">Deleting a portal record</a>.
+          </p>
 
           <h2>Security</h2>
           <p>
@@ -220,6 +379,16 @@ const contactEmail = "robotics-outreach@tawasaw.org";
             over HTTPS. No method of storage or transmission is perfectly
             secure, so we cannot guarantee absolute security, but we limit both
             what we collect and who can see it.
+          </p>
+          <p>
+            The portal is served over HTTPS and stores no passwords, so there is
+            no password to be lost in a breach. What each person can see is
+            decided for every request rather than by what the screen happens to
+            show: a coach reaches their own team, a guardian reaches their own
+            family, and a student reaches only their own attendance. Guardian
+            contact details follow responsibility for a team, not the running of
+            its attendance, so an adult who only takes the register does not see
+            them.
           </p>
 
           <h2>Your choices and requests</h2>
@@ -230,6 +399,10 @@ const contactEmail = "robotics-outreach@tawasaw.org";
             <li>Ask what information we hold about you or your child.</li>
             <li>Correct information that is wrong or out of date.</li>
             <li>Ask us to delete an application or other records.</li>
+            <li>
+              Ask us to erase your family's portal records — you can also raise
+              this from inside the portal itself.
+            </li>
             <li>Ask us to stop contacting you.</li>
             <li>Ask us to remove a photo or video.</li>
           </ul>
